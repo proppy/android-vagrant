@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ADD oracle-license-selections /etc/debconf.d/
 RUN debconf-set-selections /etc/debconf.d/oracle-license-selections
 ADD webupd8team-java.list /etc/apt/sources.list.d/
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886 && apt-get update && apt-get install -yq oracle-java7-installer --no-install-recommends
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886 && apt-get update && apt-get install -yq oracle-java7-installer oracle-java7-set-default --no-install-recommends && rm /var/cache/oracle-jdk7-installer
 
 # Install Android SDK Dependencies
 RUN dpkg --add-architecture i386 && apt-get update && apt-get install -yq libstdc++6:i386 zlib1g:i386 libncurses5:i386 curl ca-certificates unzip --no-install-recommends

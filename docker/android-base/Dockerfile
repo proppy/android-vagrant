@@ -9,7 +9,7 @@ ADD webupd8team-java.list /etc/apt/sources.list.d/
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886 && apt-get update && apt-get install -yq oracle-java7-installer --no-install-recommends
 
 # Install Android SDK Dependencies
-RUN dpkg --add-architecture i386 && apt-get update && apt-get install -yq libstdc++6:i386 zlib1g:i386 libncurses5:i386 curl ca-certificates --no-install-recommends
+RUN dpkg --add-architecture i386 && apt-get update && apt-get install -yq libstdc++6:i386 zlib1g:i386 libncurses5:i386 curl ca-certificates unzip --no-install-recommends
 
 # Install Java build tools
 ENV ANT_URL http://mirror.tcpdiag.net/apache//ant/binaries/apache-ant-1.9.4-bin.tar.gz

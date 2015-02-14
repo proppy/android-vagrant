@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install Oracle JDK
 ADD oracle-license-selections /etc/debconf.d/
-RUN debconf-set-selections /etc/debconf.d/orable-license-selections
+RUN debconf-set-selections /etc/debconf.d/oracle-license-selections
 ADD webupd8team-java.list /etc/apt/sources.list.d/
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886 && apt-get update && apt-get install -yq oracle-java7-installer --no-install-recommends
 

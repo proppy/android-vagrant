@@ -18,8 +18,8 @@ ENV ANT_HOME /usr/local/apache-ant-1.9.4
 ENV MAVEN_URL http://mirrors.ibiblio.org/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz
 RUN curl -L ${MAVEN_URL} | tar -xz -C /usr/local
 ENV MAVEN_HOME /usr/local/apache-maven-3.1.1
-ENV GRADLE_URL http://services.gradle.org/distributions/gradle-2.2.1-all.zip
-RUN curl -L ${GRADLE_URL} -o /tmp/gradle-2.2.1-all.zip && unzip /tmp/gradle-2.2.1-all.zip -d /usr/local && rm /tmp/gradle-2.2.1-all.zip
+ENV GRADLE_URL http://services.gradle.org/distributions/gradle-2.2.1-bin.zip
+RUN curl -L ${GRADLE_URL} -o /tmp/gradle-2.2.1-bin.zip && unzip /tmp/gradle-2.2.1-bin.zip -d /usr/local && rm /tmp/gradle-2.2.1-bin.zip
 ENV GRADLE_HOME /usr/local/gradle-2.2.1
 
 # Download and untar Android SDK

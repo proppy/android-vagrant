@@ -2,5 +2,5 @@
 set -ex
 
 Xorg -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 &
-x11vnc -display :10 &
+x11vnc -display :10 -forever -shared &
 /usr/local/novnc/utils/launch.sh --vnc localhost:5900
